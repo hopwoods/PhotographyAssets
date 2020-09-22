@@ -9,6 +9,9 @@ const style = css`
   background-color: #fefefe;
   padding: 0.4rem 0.6rem;
   margin: 1rem;
+  &:focus: {
+    outline: #dedede auto 1px;
+  }
 `;
 
 interface ITextBoxProps {

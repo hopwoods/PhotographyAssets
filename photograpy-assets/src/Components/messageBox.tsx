@@ -23,10 +23,17 @@ export interface IMessage {
 export const MessageBox: FunctionComponent = () => {
   const { state } = useStateContext();
   const { messageText } = state;
+  let hidden = null;
+  if (messageText.message === "") {
+    hidden = css`
+      display: none;
+      visible: false;
+    `;
+  }
 
   return (
     <React.Fragment>
-      <div css={divStyle} id="MessageBox">
+      <div css={[divStyle, hidden]} id="MessageBox">
         <h5>Message Received</h5>
         <p css={pStyle}>{messageText.message}</p>
       </div>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { jsx, css } from "@emotion/core";
 import React from "react";
 import { Button, TextBox } from "../Components/";
@@ -20,27 +20,35 @@ const h5Style = css`
 `;
 
 export const MessageSender: FunctionComponent = () => {
-  const buttonText = "Send Message: ";
+  //Global State
+  const { state, dispatch } = useStateContext();
+  const { buttonText } = state;
+
+  //Local State
   const [message, setMessage] = useState("Default Value");
   const [text, setbuttonText] = useState(`${buttonText} ${message}`);
-  const { dispatch } = useStateContext();
+
   const newMessage: IMessage = {
     message: message,
   };
+
+  const updateMessage = useCallback(
+    () => dispatch(Actions.SetMessage(newMessage)),
+    [dispatch, newMessage]
+  );
+
   const logClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     console.log(`Message sent is: ${message}`);
-    dispatch(Actions.SetMessage(newMessage));
+    updateMessage();
   };
 
   useEffect(() => {
     setbuttonText(`${buttonText} ${message}`);
-  }, [message]);
+  }, [message, buttonText]);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
-    setMessage(newValue);
-    console.log(newValue);
+    setMessage(e.currentTarget.value);
   };
 
   return (
@@ -48,7 +56,7 @@ export const MessageSender: FunctionComponent = () => {
       <div css={divStyle}>
         <h5 css={h5Style}>Type a message to send and click the button</h5>
         <TextBox onChange={(e) => handleChange(e)} />
-        <Button message={text} onClick={(e) => logClick(e)} />
+        <Button primary={true} label={text} onClick={(e) => logClick(e)} />
       </div>
     </React.Fragment>
   );
