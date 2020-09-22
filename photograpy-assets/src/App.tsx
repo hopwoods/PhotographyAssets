@@ -1,11 +1,13 @@
 import React from "react";
-import { Button } from "./Components/button";
+import { MessageSender, MessageBox } from "./Components/";
+import { StateProvider } from "./GlobalState";
 
 function App() {
   return (
-    <div className="App">
-      <Button text="Hello World" onClick={() => "Hello"} />
-    </div>
+    <StateProvider>
+      <MessageSender />
+      <MessageBox />
+    </StateProvider>
   );
 }
 

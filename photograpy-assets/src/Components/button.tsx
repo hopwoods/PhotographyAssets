@@ -1,11 +1,6 @@
 /** @jsx jsx */
-import React, { FC, ReactElement } from "react";
+import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-
-export interface IButtonProps {
-  text: string;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-}
 
 const style = css`
   border: 1px solid #dd5a1b;
@@ -16,13 +11,20 @@ const style = css`
   margin: 1rem;
 `;
 
-export const Button: FC<IButtonProps> = ({ text, onClick }): ReactElement => {
-  const logClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    console.log("Button Clicked");
-  };
+interface IButtonProps {
+  onClick(e: React.MouseEvent<HTMLButtonElement>): void;
+  message: string;
+}
+
+export const Button: FunctionComponent<IButtonProps> = ({
+  message,
+  onClick,
+}) => {
   return (
-    <button css={style} onClick={(e) => logClick(e)}>
-      {text}
-    </button>
+    <React.Fragment>
+      <button css={style} onClick={(e) => onClick(e)}>
+        {message}
+      </button>
+    </React.Fragment>
   );
 };
