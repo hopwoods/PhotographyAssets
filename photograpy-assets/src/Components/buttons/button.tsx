@@ -27,7 +27,7 @@ const Primary = css`
   background-color: ${ThemeColors.primary};
   margin: 1rem;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
@@ -43,7 +43,7 @@ const Seconday = css`
   color: ${ThemeColors.primary};
   margin: 1rem;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
@@ -66,19 +66,19 @@ export const Button: FunctionComponent<ButtonProps> = ({
       case "small":
         return css`
           font-size: 0.7rem;
-          padding: 0.2rem 0.4rem;
+          padding: 0.4rem 0.8rem;
         `;
 
       case "medium":
         return css`
           font-size: 0.8rem;
-          padding: 0.4rem 0.8rem;
+          padding: 0.6rem 1.2rem;
         `;
 
       case "large":
         return css`
           font-size: 1rem;
-          padding: 0.6rem 1.2rem;
+          padding: 0.8rem 1.6rem;
         `;
 
       default:
