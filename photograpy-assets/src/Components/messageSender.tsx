@@ -21,8 +21,8 @@ const h5Style = css`
 
 export const MessageSender: FunctionComponent = () => {
   //Global State
-  const { state, dispatch } = useStateContext();
-  const { buttonText } = state;
+  const { globalState: state, dispatch } = useStateContext();
+  const buttonText = state.sendMessageButton.label;
 
   //Local State
   const [message, setMessage] = useState("Default Value");
@@ -37,11 +37,14 @@ export const MessageSender: FunctionComponent = () => {
     [dispatch, newMessage]
   );
 
-  const logClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    console.log(`Message sent is: ${message}`);
-    updateMessage();
-  };
+  const logClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>): void => {
+      e.preventDefault();
+      updateMessage();
+      console.log(`Message sent is: ${message}`);
+    },
+    [message, updateMessage]
+  );
 
   useEffect(() => {
     setbuttonText(`${buttonText} ${message}`);

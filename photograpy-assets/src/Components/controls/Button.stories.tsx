@@ -6,7 +6,7 @@ import { Button, ButtonProps } from "./button";
 import { ThemeColors } from "../../style";
 
 export default {
-  title: "PhotographyAssets/Controls/Button",
+  title: "Photography Assets/Controls/Button",
   component: Button,
   argTypes: {
     backgroundColor: { control: "color" },

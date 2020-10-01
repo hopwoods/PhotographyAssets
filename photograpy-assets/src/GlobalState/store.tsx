@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import { IMessage } from "../Components";
-import { Action } from "../GlobalState";
+import { IMessage, ButtonProps } from "../Components";
+import { Action } from ".";
 
 export interface StateContext {
-  buttonText: string;
-  messageText: IMessage;
+  sendMessageButton: ButtonProps;
+  sentMessage: IMessage;
 }
+
 export interface Store {
-  state: StateContext;
+  globalState: StateContext;
   dispatch: React.Dispatch<Action>;
 }
 
@@ -16,12 +17,12 @@ const defaultMessage: IMessage = {
 };
 
 export const defaultState: StateContext = {
-  buttonText: "Send message: ",
-  messageText: defaultMessage,
+  sendMessageButton: { label: "Send message: " },
+  sentMessage: defaultMessage,
 };
 
 export const AppContext = React.createContext<Store>({
-  state: defaultState,
+  globalState: defaultState,
   dispatch: () => null,
 });
 

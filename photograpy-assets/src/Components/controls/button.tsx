@@ -27,7 +27,7 @@ const Primary = css`
   background-color: ${ThemeColors.primary};
   margin: 1rem;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
