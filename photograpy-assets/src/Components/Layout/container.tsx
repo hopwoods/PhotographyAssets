@@ -13,7 +13,7 @@ const style = css`
   color: ${ThemeColors.text};
   background-color: ${ThemeColors.bodyBackground};
   display: grid;
-  grid-template-columns: repeat(16, minmax(50px, 0.1fr));
+  grid-template-columns: minmax(50px, 1fr);
   grid-template-rows:
     minmax(50px, 0.15fr)
     1fr

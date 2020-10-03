@@ -5,7 +5,7 @@ import { ThemeColors } from "../../style";
 import { Link } from "react-router-dom";
 
 const style = css`
-  grid-column: 1 / span 16;
+  grid-column: 1 / span 1;
   justify-self: stretch;
   background-color: ${ThemeColors.primary};
   color: ${ThemeColors.textInverse};

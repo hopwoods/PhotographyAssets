@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
 
 const style = css`
-  grid-column: 1 / span 16;
+  grid-column: 1 / span 1;
   padding: 1rem;
 `;
 
