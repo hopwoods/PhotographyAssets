@@ -1,9 +1,7 @@
 import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/";
-
 import { Button, ButtonProps } from "./button";
-import { ThemeColors } from "../../style";
 
 export default {
   title: "Photography Assets/Controls/Button",

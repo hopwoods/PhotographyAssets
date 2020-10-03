@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
 import { ThemeColors } from "../../style";
 

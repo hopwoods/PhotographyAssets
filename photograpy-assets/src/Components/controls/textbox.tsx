@@ -14,7 +14,7 @@ const style = css`
   }
 `;
 
-interface ITextBoxProps {
+export interface ITextBoxProps {
   onChange(e: React.FormEvent<HTMLInputElement>): void;
 }
 

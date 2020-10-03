@@ -2,9 +2,9 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { jsx, css } from "@emotion/core";
 import React from "react";
-import { Button, TextBox } from "./controls";
-import { useStateContext, Actions } from "../GlobalState";
-import { IMessage } from "./controls";
+import { Button, TextBox } from ".";
+import { useStateContext, Actions } from "../../GlobalState";
+import { IMessage } from ".";
 
 const divStyle = css`
   border: 1px solid #cecece;

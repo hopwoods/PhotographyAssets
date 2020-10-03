@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { useStateContext } from "../GlobalState";
+import { useStateContext } from "../../GlobalState";
 
 const divStyle = css`
   border: 1px solid #d6d6d6;
