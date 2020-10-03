@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { IMessage, ButtonProps } from "../Components";
+import { IMessage, ButtonProps } from "../Components/controls";
 import { Action } from ".";
 
 export interface StateContext {

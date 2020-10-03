@@ -1,4 +1,4 @@
-import { IMessage } from "../Components";
+import { IMessage } from "../Components/controls";
 
 export enum ActionType {
   SET_MESSAGE = "Set Message",
