@@ -4,7 +4,7 @@ import { jsx, css } from "@emotion/core";
 import { ThemeColors } from "../../style";
 
 const style = css`
-  grid-area: footer;
+  grid-column: 1 / span 16;
   justify-self: stretch;
   background-color: ${ThemeColors.lightAccent};
   border-top: 3px solid ${ThemeColors.Grey1};

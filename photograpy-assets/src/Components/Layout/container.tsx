@@ -13,16 +13,12 @@ const style = css`
   color: ${ThemeColors.text};
   background-color: ${ThemeColors.bodyBackground};
   display: grid;
-  grid-template-columns: minmax(50px, 1fr);
+  grid-template-columns: repeat(16, minmax(50px, 0.1fr));
   grid-template-rows:
     minmax(50px, 0.15fr)
     1fr
     minmax(20px, 0.1fr);
   grid-gap: 0em;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
   height: 100vh;
 
   h1,
