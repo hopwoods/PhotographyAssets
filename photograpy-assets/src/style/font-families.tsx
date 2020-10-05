@@ -4,6 +4,6 @@ type fontFamilies = {
 };
 
 export const FontFamilies: fontFamilies = {
-  primary: "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;",
-  secondary: "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;",
+  primary: "'Roboto', sans-serif;",
+  secondary: "'Roboto Condensed', sans-serif;",
 };

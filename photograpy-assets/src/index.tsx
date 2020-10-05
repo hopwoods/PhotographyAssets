@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Redirect,
-  RouteComponentProps,
 } from "react-router-dom";
 import { Container, Content, Footer, Navbar } from "./Components/Layout/";
 import { StateProvider } from "./GlobalState";

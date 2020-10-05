@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { ThemeColors } from "../../style";
+import { ThemeColors, FontFamilies } from "../../style";
 
 const style = css`
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-  font-family: "Roboto", sans-serif;
+  font-family: ${FontFamilies.primary}
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +15,7 @@ const style = css`
   display: grid;
   grid-template-columns: minmax(50px, 1fr);
   grid-template-rows:
-    minmax(50px, 0.15fr)
+    minmax(50px, 0.1fr)
     1fr
     minmax(20px, 0.1fr);
   grid-gap: 0em;
@@ -27,9 +27,14 @@ const style = css`
   h4,
   h5,
   h6 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: ${FontFamilies.secondary};
     font-weight: 400;
     color: ${ThemeColors.primary};
+  }
+  font-size: 1rem;
+
+  @media (min-width: 600px) {
+    font-size: 1.1rem;
   }
 `;
 
