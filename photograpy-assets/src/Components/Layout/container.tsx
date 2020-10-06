@@ -1,21 +1,15 @@
 /** @jsx jsx */
 import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { FontFamilies, Gradients, cssGradients } from "../../style";
+import { FontFamilies } from "../../style";
+import { getGradients } from "../../functions";
 import { useStateContext } from "../../GlobalState";
 import useTheme from "../../Hooks/useTheme";
 
 export const Container: FunctionComponent = ({ children }) => {
   const { globalState: state } = useStateContext();
   const { darkMode } = state;
-
-  const gradients: cssGradients = {
-    gradient1: darkMode ? Gradients.DarkGradient1 : Gradients.LightGradient1,
-    gradient2: darkMode ? Gradients.DarkGradient2 : Gradients.LightGradient2,
-    textGradient: darkMode
-      ? Gradients.DarkTextGradient
-      : Gradients.LightTextGradient,
-  };
+  const gradients = getGradients(darkMode);
 
   const themeColors = useTheme();
   const style = css`

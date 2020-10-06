@@ -1,0 +1,1 @@
+export { getGradients } from "./getGradients";

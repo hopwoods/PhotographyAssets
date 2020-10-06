@@ -31,6 +31,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   const themeColors = useTheme();
 
   const Primary = css`
+    outline: 0;
     border: 0;
     border-radius: 0.4rem;
     color: ${themeColors.white};
@@ -48,6 +49,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   `;
 
   const Seconday = css`
+    outline: 0;
     border: 0;
     border-radius: 0.4rem;
     color: ${themeColors.primary};
@@ -68,19 +70,19 @@ export const Button: FunctionComponent<ButtonProps> = ({
     switch (size) {
       case "small":
         return css`
-          font-size: 0.7rem;
+          font-size: 0.9rem;
           padding: 0.4rem 0.8rem;
         `;
 
       case "medium":
         return css`
-          font-size: 0.8rem;
+          font-size: 1rem;
           padding: 0.6rem 1.2rem;
         `;
 
       case "large":
         return css`
-          font-size: 1rem;
+          font-size: 1.1rem;
           padding: 0.8rem 1.6rem;
         `;
 

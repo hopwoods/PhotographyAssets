@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { FontFamilies, Gradients, cssGradients } from "../../style";
+import { FontFamilies } from "../../style";
+import { getGradients } from "../../functions";
 import { useStateContext } from "../../GlobalState";
 import { Link } from "react-router-dom";
 import useTheme from "../../Hooks/useTheme";
@@ -22,13 +23,7 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
   const { globalState: state } = useStateContext();
   const { darkMode } = state;
 
-  const gradients: cssGradients = {
-    gradient1: darkMode ? Gradients.DarkGradient1 : Gradients.LightGradient1,
-    gradient2: darkMode ? Gradients.DarkGradient2 : Gradients.LightGradient2,
-    textGradient: darkMode
-      ? Gradients.DarkTextGradient
-      : Gradients.LightTextGradient,
-  };
+  const gradients = getGradients(darkMode);
 
   const themeColors = useTheme();
   const style = css`  

@@ -31,7 +31,7 @@ export const MessageBox: FunctionComponent = () => {
   return (
     <React.Fragment>
       <div css={[divStyle, hidden]} id="MessageBox">
-        <h5>Message Received</h5>
+        <h4>Message Received</h4>
         <p css={pStyle}>{sentMessage.message}</p>
       </div>
     </React.Fragment>

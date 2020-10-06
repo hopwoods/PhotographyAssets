@@ -5,12 +5,15 @@ interface IGradients {
   LightGradient2: string;
   DarkTextGradient: string;
   LightTextGradient: string;
+  DarkBorderGradient: string;
+  LightBorderGradient: string;
 }
 
 export type cssGradients = {
   gradient1: string;
   gradient2: string;
   textGradient: string;
+  borderGradient: string;
 };
 
 export const Gradients: IGradients = {
@@ -29,4 +32,8 @@ background: linear-gradient(160deg, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 
   DarkTextGradient: `linear-gradient(to right, #E07851 60%, #B55C53 75%);`,
 
   LightTextGradient: `linear-gradient(to right, #E07851 60%, #B55C53 75%);`,
+
+  DarkBorderGradient: `linear-gradient(to right, #E07851 0%, #B55C53 100%);`,
+
+  LightBorderGradient: `linear-gradient(to right, #E07851 0%, #B55C53 100%);`,
 };

@@ -54,7 +54,7 @@ export const MessageSender: FunctionComponent = () => {
   return (
     <React.Fragment>
       <div css={divStyle}>
-        <h5 css={h5Style}>Type a message to send and click the button</h5>
+        <h4 css={h5Style}>Type a message to send and click the button</h4>
         <TextBox onChange={(e) => handleChange(e)} />
         <Button primary={true} label={text} onClick={(e) => logClick(e)} />
       </div>
