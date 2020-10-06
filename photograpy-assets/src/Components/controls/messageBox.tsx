@@ -4,10 +4,7 @@ import { jsx, css } from "@emotion/core";
 import { useStateContext } from "../../GlobalState";
 
 const divStyle = css`
-  border: 1px solid #d6d6d6;
   border-radius: 0.4rem;
-  color: #333;
-  background-color: #fefefe;
   padding: 0.4rem 0.6rem;
   margin: 1rem;
 `;

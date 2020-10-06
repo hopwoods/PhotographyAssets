@@ -7,10 +7,7 @@ import { useStateContext, Actions } from "../../GlobalState";
 import { IMessage } from ".";
 
 const divStyle = css`
-  border: 1px solid #cecece;
   border-radius: 0.4rem;
-  color: #0f0f0f;
-  background-color: #fefefe;
   padding: 0.4rem 0.6rem;
   margin: 1rem;
 `;
