@@ -4,6 +4,7 @@ export interface IThemeColors {
   text: string;
   textInverse: string;
   primary: string;
+  primaryShades: string;
   lightShades: string;
   lightAccent: string;
   darkShades: string;
@@ -23,6 +24,7 @@ const DarkTheme: IThemeColors = {
   text: "#E4E4E4",
   textInverse: "#3e3e3e",
   primary: "#B55C53",
+  primaryShades: "#a74c43",
   lightShades: "#F3F7FA",
   lightAccent: "#E07851",
   darkShades: "#3E4148",
@@ -42,6 +44,7 @@ const LightTheme: IThemeColors = {
   text: "#2e2e2e",
   textInverse: "#1e1e1e",
   primary: "#B55C53",
+  primaryShades: "#a74c43",
   lightShades: "#F3F7FA",
   lightAccent: "#AFB1B0",
   darkShades: "#C3C3C3",

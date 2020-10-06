@@ -4,21 +4,30 @@ import { jsx, css } from "@emotion/core";
 import useTheme from "../../Hooks/useTheme";
 import { NavBarLink, ToggleSwitch } from "../controls";
 import { useStateContext, Actions } from "../../GlobalState";
-import { FontFamilies } from "../../style";
+import { FontFamilies, Gradients, cssGradients } from "../../style";
 
 export const Navbar: FunctionComponent = ({ children }) => {
   const { globalState: state, dispatch } = useStateContext();
   const { darkMode } = state;
 
+  const gradients: cssGradients = {
+    gradient1: darkMode ? Gradients.DarkGradient1 : Gradients.LightGradient1,
+    gradient2: darkMode ? Gradients.DarkGradient2 : Gradients.LightGradient2,
+    textGradient: darkMode
+      ? Gradients.DarkTextGradient
+      : Gradients.LightTextGradient,
+  };
+
   const themeColors = useTheme();
   const style = css`
     grid-column: 1 / span 1;
-    background-color: ${themeColors.darkShades};
+    background-color: none;
     color: ${themeColors.text};
     padding: 0.3rem;
     height: fit-content;
     z-index: 2;
     font-size: 0.9rem;
+    text-transform: uppercase;
 
     ul {
       list-style-type: none;
@@ -27,19 +36,19 @@ export const Navbar: FunctionComponent = ({ children }) => {
       display: grid;
       grid-template-columns: minmax(325px, 1fr);
       grid-gap: 0em;
-      justify-content: center;
-      justify-items: center;
     }
 
     ul li {
       grid-column-start: 1 / span 1;
-      justify-self: center;
+      justify-self: stretch;
       align-self: center;
       margin: 0.3rem;
       display: inline-block;
     }
     ul li.logo {
       grid-column-start: 1 / span 1;
+      text-align: left;
+      align-self: stretch;
     }
 
     ul li label {
@@ -82,7 +91,7 @@ export const Navbar: FunctionComponent = ({ children }) => {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 3;
       }
       ul li.dark-mode-toggle {
         grid-column: 11 / span 2;
@@ -100,7 +109,7 @@ export const Navbar: FunctionComponent = ({ children }) => {
     <nav css={style} id="NavBar">
       <ul role="menubar">
         <li className="logo">
-          <span>Photography Assets</span>
+          <h2>Photography Assets</h2>
         </li>
         <li>
           <NavBarLink to="/" value="Home" />

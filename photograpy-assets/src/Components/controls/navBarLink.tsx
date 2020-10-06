@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { FontFamilies } from "../../style";
-import useTheme from "../../Hooks/useTheme";
+import { FontFamilies, Gradients, cssGradients } from "../../style";
+import { useStateContext } from "../../GlobalState";
 import { Link } from "react-router-dom";
+import useTheme from "../../Hooks/useTheme";
 
 export interface LinkProps {
   //Route to be used for the link
@@ -18,6 +19,17 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
   value,
   ...props
 }) => {
+  const { globalState: state } = useStateContext();
+  const { darkMode } = state;
+
+  const gradients: cssGradients = {
+    gradient1: darkMode ? Gradients.DarkGradient1 : Gradients.LightGradient1,
+    gradient2: darkMode ? Gradients.DarkGradient2 : Gradients.LightGradient2,
+    textGradient: darkMode
+      ? Gradients.DarkTextGradient
+      : Gradients.LightTextGradient,
+  };
+
   const themeColors = useTheme();
   const style = css`  
   a {
@@ -35,17 +47,13 @@ export const NavBarLink: FunctionComponent<LinkProps> = ({
     right: 0px;
     bottom: -3px;
     left: 0px;
-    background-color: $linkPink;
+    background-color: none;
   }
   a:hover {
     color: ${themeColors.text};
   }
   a:hover::before {
-    background: linear-gradient(
-      to right,
-      ${themeColors.lightAccent} 40%,
-      ${themeColors.primary} 75%
-    );
+    background: ${gradients.textGradient};
   }
 `;
 

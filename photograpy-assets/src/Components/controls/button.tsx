@@ -2,6 +2,7 @@
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
 import useTheme from "../../Hooks/useTheme";
+import { FontFamilies } from "../../style";
 
 export interface ButtonProps {
   // Is this the principal call to action on the page?
@@ -36,12 +37,13 @@ export const Button: FunctionComponent<ButtonProps> = ({
     background-color: ${themeColors.primary};
     margin: 1rem;
     font-weight: 400;
+    font-family: ${FontFamilies.secondary};
     cursor: pointer;
     display: inline-block;
     line-height: 1;
     &:hover {
-      color: ${themeColors.lightAccent};
-      background-color: ${themeColors.darkShades};
+      color: ${themeColors.white};
+      background-color: ${themeColors.primaryShades};
     }
   `;
 
@@ -51,11 +53,12 @@ export const Button: FunctionComponent<ButtonProps> = ({
     color: ${themeColors.primary};
     margin: 1rem;
     font-weight: 600;
+    font-family: ${FontFamilies.secondary};
     cursor: pointer;
     display: inline-block;
     line-height: 1;
     &:hover {
-      color: ${themeColors.primary};
+      color: ${themeColors.text};
       background-color: ${themeColors.darkAccent};
     }
   `;
