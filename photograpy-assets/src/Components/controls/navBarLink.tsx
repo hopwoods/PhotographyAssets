@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { ThemeColors, FontFamilies } from "../../style";
+import { FontFamilies } from "../../style";
+import useTheme from "../../Hooks/useTheme";
 import { Link } from "react-router-dom";
 
 export interface LinkProps {
@@ -12,10 +13,16 @@ export interface LinkProps {
   value: string;
 }
 
-const style = css`  
+export const NavBarLink: FunctionComponent<LinkProps> = ({
+  to,
+  value,
+  ...props
+}) => {
+  const themeColors = useTheme();
+  const style = css`  
   a {
     position: relative;
-    color: ${ThemeColors.textInverse};
+    color: ${themeColors.text};
     text-decoration: none;
     text-transform: uppercase;
     font-family: ${FontFamilies.secondary}
@@ -31,22 +38,17 @@ const style = css`
     background-color: $linkPink;
   }
   a:hover {
-    color: ${ThemeColors.textInverse};
+    color: ${themeColors.text};
   }
   a:hover::before {
     background: linear-gradient(
       to right,
-      ${ThemeColors.lightAccent} 40%,
-      ${ThemeColors.primary} 75%
+      ${themeColors.lightAccent} 40%,
+      ${themeColors.primary} 75%
     );
   }
 `;
 
-export const NavBarLink: FunctionComponent<LinkProps> = ({
-  to,
-  value,
-  ...props
-}) => {
   return (
     <React.Fragment>
       <span css={style}>

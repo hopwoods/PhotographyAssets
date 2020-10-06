@@ -1,86 +1,104 @@
 /** @jsx jsx */
 import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { ThemeColors } from "../../style";
-import { NavBarLink } from "../controls";
-import { useStateContext } from "../../GlobalState";
-
-const style = css`
-  grid-column: 1 / span 1;
-  background-color: ${ThemeColors.darkShades};
-  color: ${ThemeColors.textInverse};
-  padding: 0.3rem;
-  height: fit-content;
-  z-index: 2;
-  font-size: 0.9rem;
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: minmax(325px, 1fr);
-    grid-gap: 0em;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  ul li {
-    grid-column-start: 1 / span 1;
-    justify-self: center;
-    align-self: center;
-    margin: 0.3rem;
-    display: inline-block;
-  }
-  ul li.logo {
-    grid-column-start: 1 / span 1;
-  }
-
-  @media (min-width: 600px) {
-    font-size: 1rem;
-
-    ul {
-      grid-template-columns: repeat(9, minmax(65px, 1fr));
-      grid-template-rows: minmax(50px, 1fr);
-    }
-
-    ul li {
-      grid-column-start: span 1;
-    }
-    ul li.logo {
-      grid-column: 1 / span 2;
-    }
-    ul li.dark-mode-toggle {
-      grid-column: 8 / span 2;
-    }
-  }
-
-  @media (min-width: 769px) {
-    font-size: 1rem;
-
-    ul {
-      grid-template-columns: repeat(12, minmax(65px, 1fr));
-      grid-template-rows: minmax(50px, 1fr);
-    }
-
-    ul li {
-      grid-column-start: span 1;
-    }
-    ul li.logo {
-      grid-column: 1 / span 2;
-    }
-    ul li.dark-mode-toggle {
-      grid-column: 11 / span 2;
-    }
-  }
-`;
+import useTheme from "../../Hooks/useTheme";
+import { NavBarLink, ToggleSwitch } from "../controls";
+import { useStateContext, Actions } from "../../GlobalState";
+import { FontFamilies } from "../../style";
 
 export const Navbar: FunctionComponent = ({ children }) => {
-  const { globalState } = useStateContext();
-  const { globals } = globalState;
+  const { globalState: state, dispatch } = useStateContext();
+  const { darkMode } = state;
+
+  const themeColors = useTheme();
+  const style = css`
+    grid-column: 1 / span 1;
+    background-color: ${themeColors.darkShades};
+    color: ${themeColors.text};
+    padding: 0.3rem;
+    height: fit-content;
+    z-index: 2;
+    font-size: 0.9rem;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: minmax(325px, 1fr);
+      grid-gap: 0em;
+      justify-content: center;
+      justify-items: center;
+    }
+
+    ul li {
+      grid-column-start: 1 / span 1;
+      justify-self: center;
+      align-self: center;
+      margin: 0.3rem;
+      display: inline-block;
+    }
+    ul li.logo {
+      grid-column-start: 1 / span 1;
+    }
+
+    ul li label {
+      text-decoration: none;
+    text-transform: uppercase;
+    font-family: ${FontFamilies.secondary}
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 0.4rem;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 1rem;
+
+      ul {
+        grid-template-columns: repeat(9, minmax(65px, 1fr));
+        grid-template-rows: minmax(50px, 1fr);
+      }
+
+      ul li {
+        grid-column-start: span 1;
+      }
+      ul li.logo {
+        grid-column: 1 / span 2;
+      }
+      ul li.dark-mode-toggle {
+        grid-column: 7 / span 3;
+      }
+    }
+
+    @media (min-width: 769px) {
+      font-size: 1rem;
+
+      ul {
+        grid-template-columns: repeat(12, minmax(65px, 1fr));
+        grid-template-rows: minmax(50px, 1fr);
+      }
+
+      ul li {
+        grid-column-start: span 1;
+      }
+      ul li.logo {
+        grid-column: 1 / span 2;
+      }
+      ul li.dark-mode-toggle {
+        grid-column: 11 / span 2;
+        justify-self: stretch;
+        text-align: right;
+      }
+    }
+  `;
+
+  const toggleDarkMode = (value: boolean) => {
+    dispatch(Actions.ToggleDarkMode(value));
+  };
+
   return (
-    <nav css={style}>
-      <ul>
+    <nav css={style} id="NavBar">
+      <ul role="menubar">
         <li className="logo">
           <span>Photography Assets</span>
         </li>
@@ -91,7 +109,16 @@ export const Navbar: FunctionComponent = ({ children }) => {
           <NavBarLink to="/about" value="About Me" />
         </li>
         <li className="dark-mode-toggle">
-          Dark Mode : {globals.darkMode ? "True" : "False"}
+          <label>Dark Mode?</label>
+          <ToggleSwitch
+            id="toggle-dark-mode"
+            name="toggle-dark-mode"
+            checked={darkMode ? true : false}
+            optionLabels={["Yes", "No"]}
+            small={false}
+            disabled={false}
+            onChange={() => toggleDarkMode(!darkMode)}
+          />
         </li>
       </ul>
     </nav>

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
-import { ThemeColors } from "../../style";
+import useTheme from "../../Hooks/useTheme";
 
 export interface ButtonProps {
   // Is this the principal call to action on the page?
@@ -20,39 +20,6 @@ export interface ButtonProps {
   onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const Primary = css`
-  border: 0;
-  border-radius: 0.4rem;
-  color: ${ThemeColors.lightAccent};
-  background-color: ${ThemeColors.primary};
-  margin: 1rem;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  &:hover {
-    color: ${ThemeColors.lightAccent};
-    background-color: ${ThemeColors.darkShades};
-  }
-`;
-
-const Seconday = css`
-  border: 0;
-  border-radius: 0.4rem;
-  color: ${ThemeColors.primary};
-  margin: 1rem;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  &:hover {
-    color: ${ThemeColors.lightAccent};
-    background-color: ${ThemeColors.darkAccent};
-  }
-`;
-
 export const Button: FunctionComponent<ButtonProps> = ({
   primary = false,
   size = "medium",
@@ -60,6 +27,39 @@ export const Button: FunctionComponent<ButtonProps> = ({
   label,
   ...props
 }) => {
+  const themeColors = useTheme();
+
+  const Primary = css`
+    border: 0;
+    border-radius: 0.4rem;
+    color: ${themeColors.white};
+    background-color: ${themeColors.primary};
+    margin: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    &:hover {
+      color: ${themeColors.lightAccent};
+      background-color: ${themeColors.darkShades};
+    }
+  `;
+
+  const Seconday = css`
+    border: 0;
+    border-radius: 0.4rem;
+    color: ${themeColors.primary};
+    margin: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    &:hover {
+      color: ${themeColors.primary};
+      background-color: ${themeColors.darkAccent};
+    }
+  `;
+
   const mode = primary ? Primary : Seconday;
   const Size = (size: string) => {
     switch (size) {
