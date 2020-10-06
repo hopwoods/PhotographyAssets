@@ -91,7 +91,7 @@ export const Navbar: FunctionComponent = ({ children }) => {
         grid-column-start: span 1;
       }
       ul li.logo {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 2;
       }
       ul li.dark-mode-toggle {
         grid-column: 11 / span 2;
