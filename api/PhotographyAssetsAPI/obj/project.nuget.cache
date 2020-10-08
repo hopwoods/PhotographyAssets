@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MIIT6dO9lufKzSjfLGyAwYye9ca6gOvMLEZcbVf5jd8mzYgq0U2YGstY1epwFgIoSTny5zDEa7b+esFKVElJIA==",
+  "success": true,
+  "projectFilePath": "D:\\Repos\\Personal\\PhotographyAssets\\PhotographyAssetsAPI\\PhotographyAssetsAPI\\PhotographyAssetsAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SHopwood\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}
