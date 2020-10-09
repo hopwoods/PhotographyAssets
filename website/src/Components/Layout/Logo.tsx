@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
-import { jsx, css, keyframes } from "@emotion/core";
+import { jsx, css } from "@emotion/core";
 import useTheme from "../../Hooks/useTheme";
 import { getGradients } from "../../functions";
 import { useStateContext } from "../../GlobalState";
@@ -15,18 +15,6 @@ export const Logo: FunctionComponent = () => {
   const { darkMode } = state;
   const gradients = getGradients(darkMode);
   const themeColors = useTheme();
-  const animation = keyframes`
-  {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-  }
-`;
 
   const style = css`  
     position: relative;
@@ -49,14 +37,8 @@ export const Logo: FunctionComponent = () => {
     &:hover {
       background: ${gradients.textGradient2};
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: ${animation} 1s ease infinite;
-      &
-    }
-
-    
-
-    
+      -webkit-text-fill-color: transparent;      
+    }    
   `;
 
   return <h2 css={style}>Photography Assets</h2>;

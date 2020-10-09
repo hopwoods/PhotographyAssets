@@ -9,6 +9,7 @@ namespace PhotographyAssetsAPI.Infrastructure.DependencyInjection
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddTransient<IAssetRepository, AssetRepository>();
+            services.AddTransient<IAssetTypeRepository, AssetTypeRepository>();
             return services;
         }
     }

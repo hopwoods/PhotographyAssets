@@ -10,11 +10,13 @@ import { AssetTable } from "../Components/Layout/assetTable";
 function App() {
   const themeColors = useTheme();
   const [tableData, settableData] = useState([]);
+  const [loading, setloading] = useState(true);
   const apiUrl = "https://localhost:5001";
 
   const loadAssetData = useCallback(() => {
     axios.get(`${apiUrl}/Assets/GetAll`).then((response: AxiosResponse) => {
       settableData(response.data);
+      setloading(false);
       console.log(response.data);
     });
   }, []);
@@ -44,7 +46,7 @@ function App() {
       </div>
       <div css={main}>
         <h4>Your Gear</h4>
-        <AssetTable data={tableData} />
+        <AssetTable data={tableData} loading={loading} />
       </div>
     </React.Fragment>
   );

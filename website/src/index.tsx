@@ -6,12 +6,18 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { Container, Content, Footer, Navbar } from "./Components/Layout/";
 import { StateProvider } from "./GlobalState";
 import "./index.css";
 import App from "./pages/App";
 import About from "./pages/About";
 import * as serviceWorker from "./serviceWorker";
+
+library.add(fab, far, fas);
 
 const routing = (
   <React.StrictMode>

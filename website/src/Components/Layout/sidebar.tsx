@@ -17,10 +17,10 @@ export const Sidebar: FunctionComponent<ISideBarProps> = ({
     grid-row: 1 / span 2;
     background-color: ${backgroundColor};
     border: 0;
-    border-radius: 1em;
+    border-radius: 0.25em;
     color: ${themeColors.Grey2};
     padding: 0 1em;
-    box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
     margin-top: 1em;
   `;
 

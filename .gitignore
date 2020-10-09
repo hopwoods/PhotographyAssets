@@ -1,0 +1,12 @@
+
+api/Application/obj/
+
+api/Infrastructure/bin/
+
+api/Application/bin/
+
+api/Infrastructure/obj/
+
+api/PhotographyAssetsAPI/bin/
+
+api/PhotographyAssetsAPI/obj/

@@ -28,7 +28,8 @@ export const Container: FunctionComponent = ({ children }) => {
     1fr
     minmax(20px, 0.1fr);
   grid-gap: 0em;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   line-height: 1.5;
 
   h1,

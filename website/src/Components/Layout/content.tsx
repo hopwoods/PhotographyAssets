@@ -8,8 +8,9 @@ export const Content: FunctionComponent = ({ children }) => {
     padding: 1em;
     display: grid;
     grid-template-columns: 25em minmax(50px, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 3em;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 2em;
+    height: fit-content;
   `;
   return <article css={style}>{children}</article>;
 };
