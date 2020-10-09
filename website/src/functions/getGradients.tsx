@@ -7,6 +7,9 @@ export const getGradients = (darkMode: boolean) => {
     textGradient: darkMode
       ? Gradients.DarkTextGradient
       : Gradients.LightTextGradient,
+    textGradient2: darkMode
+      ? Gradients.DarkTextGradient2
+      : Gradients.LightTextGradient2,
     borderGradient: darkMode
       ? Gradients.DarkBorderGradient
       : Gradients.LightBorderGradient,

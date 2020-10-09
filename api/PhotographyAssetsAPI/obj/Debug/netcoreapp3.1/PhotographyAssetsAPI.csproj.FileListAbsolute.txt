@@ -8,3 +8,15 @@ D:\Repos\Personal\PhotographyAssets\PhotographyAssetsAPI\PhotographyAssetsAPI\ob
 D:\Repos\Personal\PhotographyAssets\PhotographyAssetsAPI\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.RazorTargetAssemblyInfo.cache
 D:\Repos\Personal\PhotographyAssets\PhotographyAssetsAPI\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\staticwebassets\PhotographyAssetsAPI.StaticWebAssets.Manifest.cache
 D:\Repos\Personal\PhotographyAssets\PhotographyAssetsAPI\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\staticwebassets\PhotographyAssetsAPI.StaticWebAssets.xml
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\bin\Debug\netcoreapp3.1\PhotographyAssetsAPI.exe
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.csprojAssemblyReference.cache
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.AssemblyInfoInputs.cache
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.AssemblyInfo.cs
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.RazorTargetAssemblyInfo.cache
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\staticwebassets\PhotographyAssetsAPI.StaticWebAssets.Manifest.cache
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\staticwebassets\PhotographyAssetsAPI.StaticWebAssets.xml
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Repos\Personal\PhotographyAssets\api\PhotographyAssetsAPI\obj\Debug\netcoreapp3.1\PhotographyAssetsAPI.csproj.CopyComplete

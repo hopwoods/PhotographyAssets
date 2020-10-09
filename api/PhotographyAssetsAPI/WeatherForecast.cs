@@ -1,6 +1,6 @@
 using System;
 
-namespace PhotographyAssetsAPI
+namespace PhotographyAssetsAPI.API
 {
     public class WeatherForecast
     {

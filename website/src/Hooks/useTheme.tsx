@@ -18,6 +18,7 @@ export interface IThemeColors {
   toggleColour: string;
   white: string;
   green: string;
+  sideBarGrey: string;
 }
 
 const DarkTheme: IThemeColors = {
@@ -38,6 +39,7 @@ const DarkTheme: IThemeColors = {
   toggleColour: "#2F855A",
   white: "#fff",
   green: "#387D4D",
+  sideBarGrey: "rgba(50, 50, 50, 0.5)",
 };
 
 const LightTheme: IThemeColors = {
@@ -58,6 +60,7 @@ const LightTheme: IThemeColors = {
   toggleColour: "#2F855A",
   white: "#fff",
   green: "#387D4D",
+  sideBarGrey: "rgba(200, 200, 200, 0.5)",
 };
 
 export default function useTheme(): IThemeColors {

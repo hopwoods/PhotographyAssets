@@ -5,6 +5,8 @@ interface IGradients {
   LightGradient2: string;
   DarkTextGradient: string;
   LightTextGradient: string;
+  DarkTextGradient2: string;
+  LightTextGradient2: string;
   DarkBorderGradient: string;
   LightBorderGradient: string;
 }
@@ -13,6 +15,7 @@ export type cssGradients = {
   gradient1: string;
   gradient2: string;
   textGradient: string;
+  textGradient2: string;
   borderGradient: string;
 };
 
@@ -29,9 +32,17 @@ background: linear-gradient(156deg, rgba(56,58,61,1) 0%, rgba(62,65,72,1) 47%, r
   LightGradient2: `background: rgb(254,254,254);
 background: linear-gradient(160deg, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 47%, rgba(200,200,200,1) 100%);`,
 
-  DarkTextGradient: `linear-gradient(to right, #E07851 60%, #B55C53 75%);`,
+  DarkTextGradient: `background: rgb(253,29,29);
+  background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(255,192,0,1) 90%);`,
 
-  LightTextGradient: `linear-gradient(to right, #E07851 60%, #B55C53 75%);`,
+  LightTextGradient: `background: rgb(253,29,29);
+  background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(255,192,0,1) 90%);`,
+
+  DarkTextGradient2: `background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);`,
+
+  LightTextGradient2: `background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);`,
 
   DarkBorderGradient: `linear-gradient(to right, #E07851 0%, #B55C53 100%);`,
 

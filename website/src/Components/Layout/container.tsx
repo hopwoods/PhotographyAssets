@@ -20,7 +20,7 @@ export const Container: FunctionComponent = ({ children }) => {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${themeColors.text};
-  background-color: ${gradients.gradient2};
+  background-color: ${gradients.gradient2};  
   display: grid;
   grid-template-columns: minmax(50px, 1fr);
   grid-template-rows:
@@ -30,7 +30,6 @@ export const Container: FunctionComponent = ({ children }) => {
   grid-gap: 0em;
   height: 100vh;
   line-height: 1.5;
-
 
   h1,
   h2,

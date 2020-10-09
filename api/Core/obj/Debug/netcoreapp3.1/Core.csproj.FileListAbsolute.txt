@@ -1,0 +1,9 @@
+D:\Repos\Personal\PhotographyAssets\api\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+D:\Repos\Personal\PhotographyAssets\api\Core\bin\Debug\netcoreapp3.1\Core.dll
+D:\Repos\Personal\PhotographyAssets\api\Core\bin\Debug\netcoreapp3.1\Core.pdb
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.dll
+D:\Repos\Personal\PhotographyAssets\api\Core\obj\Debug\netcoreapp3.1\Core.pdb
