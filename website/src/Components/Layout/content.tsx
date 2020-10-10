@@ -7,7 +7,7 @@ export const Content: FunctionComponent = ({ children }) => {
     grid-column: 1 / span 1;
     padding: 1em;
     display: grid;
-    grid-template-columns: 25em minmax(50px, 1fr);
+    grid-template-columns: auto minmax(50px, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-gap: 2em;
     height: fit-content;

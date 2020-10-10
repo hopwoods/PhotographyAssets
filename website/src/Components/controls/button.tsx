@@ -6,94 +6,139 @@ import { FontFamilies } from "../../style";
 
 export interface ButtonProps {
   // Is this the principal call to action on the page?
-  primary?: boolean;
+  primary: boolean;
 
-  //What background color to use
+  //What background colour to use
   backgroundColor?: string;
+
+  //What Text colour to use
+  color?: string;
 
   //How large should the button be?
   size?: "small" | "medium" | "large";
 
-  //Button contents
-  label: string;
+  //Type: solid, outline, text
+  type: "solid" | "outline" | "text";
 
   //Optional click handler
   onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({
-  primary = false,
+  primary = true,
   size = "medium",
   backgroundColor,
-  label,
+  color,
+  type = "solid",
+  children,
   ...props
 }) => {
   const themeColors = useTheme();
 
-  const Primary = css`
+  const common = css`
     outline: 0;
     border: 0;
     border-radius: 0.4em;
-    color: ${themeColors.white};
-    background-color: ${themeColors.primary};
-    margin: 1em;
     font-weight: 400;
     font-family: ${FontFamilies.secondary};
     cursor: pointer;
     display: inline-block;
-    line-height: 1;
+    line-height: 1.5;
+  `;
+
+  const Primary = css`
+    color: ${color ? color : themeColors.white};
+    background-color: ${backgroundColor
+      ? backgroundColor
+      : themeColors.primary};
     &:hover {
-      color: ${themeColors.white};
-      background-color: ${themeColors.primaryShades};
+      color: ${color ? color : themeColors.white};
+      background-color: ${backgroundColor
+        ? backgroundColor
+        : themeColors.primaryShades};
     }
   `;
 
-  const Seconday = css`
-    outline: 0;
-    border: 0;
-    border-radius: 0.4em;
-    color: ${themeColors.primary};
-    margin: 1em;
-    font-weight: 600;
-    font-family: ${FontFamilies.secondary};
-    cursor: pointer;
-    display: inline-block;
-    line-height: 1;
+  const Secondary = css`
+    background-color: ${backgroundColor
+      ? backgroundColor
+      : themeColors.darkAccent};
+    color: ${color ? color : themeColors.Grey2};
     &:hover {
-      color: ${themeColors.text};
-      background-color: ${themeColors.darkAccent};
+      color: ${color ? color : themeColors.text};
+      background-color: ${backgroundColor
+        ? backgroundColor
+        : themeColors.darkAccent};
     }
   `;
 
-  const mode = primary ? Primary : Seconday;
+  const mode = primary ? Primary : Secondary;
   const Size = (size: string) => {
     switch (size) {
       case "small":
         return css`
-          font-size: 0.9em;
-          padding: 0.4em 0.8em;
+          font-size: 0.9rem;
+          padding: 0.3em 0.6em;
         `;
 
       case "medium":
         return css`
-          font-size: 1em;
-          padding: 0.6em 1.2em;
+          font-size: 1rem;
+          padding: 0.5em 1em;
         `;
 
       case "large":
         return css`
-          font-size: 1.1em;
-          padding: 0.8em 1.6em;
+          font-size: 1.1rem;
+          padding: 0.7em 1.4em;
         `;
 
       default:
         throw new Error("Not among allowed sizes");
     }
   };
+
+  const Type = (type: string) => {
+    switch (type) {
+      case "solid":
+        return css`
+          background-color: ${backgroundColor};
+        `;
+
+      case "outline":
+        return css`
+          background-color: transparent !important;
+          border: 1px solid ${color ? color : themeColors.primary} !important;
+          color: ${color ? color : themeColors.primary};
+          &:hover {
+            color: ${color ? color : themeColors.primaryShades};
+            border: 1px solid ${color ? color : themeColors.primaryShades} !important;
+          }
+        `;
+
+      case "text":
+        return css`
+          background-color: transparent !important;
+          border: 0 !important;
+          color: ${color ? color : themeColors.primary};
+          &:hover {
+            color: ${color ? color : themeColors.primaryShades};
+          }
+        `;
+
+      default:
+        throw new Error("Not among allowed types");
+    }
+  };
+
   return (
     <React.Fragment>
-      <button style={{ backgroundColor }} css={[mode, Size(size)]} {...props}>
-        {label}
+      <button
+        style={{ backgroundColor }}
+        css={[common, mode, Size(size), Type(type)]}
+        {...props}
+      >
+        {children}
       </button>
     </React.Fragment>
   );

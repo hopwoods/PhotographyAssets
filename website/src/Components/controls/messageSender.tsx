@@ -19,7 +19,7 @@ const h5Style = css`
 export const MessageSender: FunctionComponent = () => {
   //Global State
   const { globalState: state, dispatch } = useStateContext();
-  const buttonText = state.sendMessageButton.label;
+  const buttonText = state.sendMessageButton;
 
   //Local State
   const [message, setMessage] = useState("Default Value");
@@ -55,8 +55,16 @@ export const MessageSender: FunctionComponent = () => {
     <React.Fragment>
       <div css={divStyle}>
         <h4 css={h5Style}>Type a message to send and click the button</h4>
-        <TextBox onChange={(e) => handleChange(e)} />
-        <Button primary={true} label={text} onClick={(e) => logClick(e)} />
+        <TextBox
+          onChange={(e) => handleChange(e)}
+          name="Message"
+          label="Message"
+          displayLabel={true}
+          placeholder="Enter Message"
+        />
+        <Button primary={true} type="solid" onClick={(e) => logClick(e)}>
+          {text}
+        </Button>
       </div>
     </React.Fragment>
   );

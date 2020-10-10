@@ -2,9 +2,11 @@
 import { FunctionComponent } from "react";
 import { jsx, css } from "@emotion/core";
 import { FontFamilies } from "../../style";
-import useTheme from "../../Hooks/useTheme";
 import { IAsset } from "../../Intefaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useTheme from "../../Hooks/useTheme";
+import Moment from "react-moment";
+import "moment-timezone";
 
 export interface ITableProps {
   data: IAsset[];
@@ -16,6 +18,7 @@ export const AssetTable: FunctionComponent<ITableProps> = ({
   loading,
 }) => {
   const themeColors = useTheme();
+  const dateFormat = "Do MMM YYYY HH:mm";
 
   const style = css`
     border: 0;
@@ -51,20 +54,20 @@ export const AssetTable: FunctionComponent<ITableProps> = ({
       text-align: center !important;
     }
 
-    thead tr:first-of-type th:first-child {
+    thead tr:first-of-type th:first-of-type {
       border-top-left-radius: 0.5em;
     }
 
-    thead tr:first-of-type th:last-child {
+    thead tr:first-of-type th:last-of-type {
       border-top-right-radius: 5px;
     }
 
     span.loading {
-      font-size: 2em;
+      font-size: 1.5em;
       display: inline-block;
       width: 100%;
       text-align: center;
-      color: ${themeColors.primary};
+      color: ${themeColors.text};
     }
   `;
 
@@ -120,8 +123,18 @@ export const AssetTable: FunctionComponent<ITableProps> = ({
               <td>{asset.name}</td>
               <td>{asset.type.type}</td>
               <td>{asset.serialNumber}</td>
-              <td className="number">£{asset.value}</td>
-              <td className="number">£{asset.price}</td>
+              <td className="number">
+                {new Intl.NumberFormat("en-GB", {
+                  style: "currency",
+                  currency: "GBP",
+                }).format(asset.value)}
+              </td>
+              <td className="number">
+                {new Intl.NumberFormat("en-GB", {
+                  style: "currency",
+                  currency: "GBP",
+                }).format(asset.price)}
+              </td>
               <td className="center">
                 {asset.owned ? (
                   <span css={green}>
@@ -133,8 +146,12 @@ export const AssetTable: FunctionComponent<ITableProps> = ({
                   </span>
                 )}
               </td>
-              <td>{asset.dateCreated}</td>
-              <td>{asset.dateModified}</td>
+              <td>
+                <Moment date={asset.dateCreated} format={dateFormat} />
+              </td>
+              <td>
+                <Moment date={asset.dateModified} format={dateFormat} />
+              </td>
             </tr>
           ))}
         </tbody>

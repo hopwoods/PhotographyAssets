@@ -5,9 +5,19 @@ import useTheme from "../../Hooks/useTheme";
 
 export interface ITextBoxProps {
   onChange(e: React.FormEvent<HTMLInputElement>): void;
+  name: string;
+  label: string;
+  displayLabel: boolean;
+  placeholder: string;
 }
 
-export const TextBox: FunctionComponent<ITextBoxProps> = ({ onChange }) => {
+export const TextBox: FunctionComponent<ITextBoxProps> = ({
+  onChange,
+  name,
+  label,
+  displayLabel,
+  placeholder,
+}) => {
   const themeColors = useTheme();
   const style = css`
     font-size: 1em;
@@ -45,11 +55,16 @@ export const TextBox: FunctionComponent<ITextBoxProps> = ({ onChange }) => {
   `;
 
   return (
-    <input
-      css={style}
-      type="text"
-      onChange={(e) => onChange(e)}
-      placeholder="Enter Message"
-    />
+    <React.Fragment>
+      <input
+        id={name}
+        name={name}
+        css={style}
+        type="text"
+        onChange={(e) => onChange(e)}
+        placeholder={placeholder}
+      />
+      {displayLabel ? <label htmlFor={name}>{label}</label> : null}
+    </React.Fragment>
   );
 };

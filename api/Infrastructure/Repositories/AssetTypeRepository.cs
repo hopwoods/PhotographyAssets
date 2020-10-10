@@ -22,6 +22,7 @@ namespace PhotographyAssetsAPI.Infrastructure.Repositories
             using var session = _documentStore.OpenSession();
             session.Store(item);
             await session.SaveChangesAsync();
+            session.Dispose();
         }
 
         //public async Task<int> Delete(int id)

@@ -1,7 +1,7 @@
 import { IAssetType } from "./AssetType";
 
 export interface IAsset {
-  id: number;
+  id?: number;
   name: string;
   type: IAssetType;
   serialNumber: string;

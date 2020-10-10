@@ -18,7 +18,7 @@ const defaultMessage: IMessage = {
 };
 
 export const defaultState: StateContext = {
-  sendMessageButton: { label: "Send message: " },
+  sendMessageButton: { type: "solid", primary: true },
   sentMessage: defaultMessage,
   darkMode: true,
 };
